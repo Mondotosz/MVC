@@ -55,7 +55,7 @@ class Model
         if ($this->mysqli->query($sql) === true) {
             error_log("Successful query: " . $sql);
         } else {
-            error_log("Unsuccessful query: " . $sql . "\nError L" . $this->mysqli->error);
+            error_log("Unsuccessful query: " . $sql . "\nError : " . $this->mysqli->error);
         }
     }
 
