@@ -2,5 +2,6 @@ This is a simple MVC project i made for myself in order to familiarize myself wi
 
 ## TODO
 
-- Refactor model from mysqli to PDO for compatibility
 - Prevent SQL injections in model class
+- Implement templating
+- Try using socket.io
