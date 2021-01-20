@@ -7,15 +7,15 @@ class ModelRegister extends Model
         try
         {
             // Prepare statement
-            $statement = $this->conn->prepare("INSERT INTO users (pseudo, userName, inputEmail, inputPassword, inputPhoneNumber, checkNewsLetter)
-        VALUES (:pseudo, :userName, :inputEmail, :inputPassword, :inputPhoneNumber, :checkNewsLetter)");
+            $statement = $this->conn->prepare("INSERT INTO users (pseudo, username, email, password, phoneNumber, newsLetter)
+        VALUES (:pseudo, :username, :email, :password, :phoneNumber, :newsLetter)");
         // TODO: account for null values
         $statement->bindParam(":pseudo",$pseudo);
-        $statement->bindParam(":userName",$userName);
-        $statement->bindParam(":inputEmail",$inputEmail);
-        $statement->bindParam(":inputPassword",$inputPassword);
-        $statement->bindParam(":inputPhoneNumber",$inputPhoneNumber);
-        $statement->bindParam(":checkNewsLetter",$checkNewsLetter);
+        $statement->bindParam(":username",$userName);
+        $statement->bindParam(":email",$inputEmail);
+        $statement->bindParam(":password",$inputPassword);
+        $statement->bindParam(":phoneNumber",$inputPhoneNumber);
+        $statement->bindParam(":newsLetter",$checkNewsLetter);
         
         // Execute statement
         $statement->execute();
