@@ -6,37 +6,43 @@
     <title>Chat</title>
     <link rel="stylesheet" href="<?=$GLOBALS['config']['bsCss'] ?>">
     <style>
+        body {
+            background-color: lightgray;
+        }
+
         .box {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            margin-top:1.5vh;
-            margin-bottom:1.5vh;
+            margin-top:2.5vh;
+            margin-bottom:2.5vh;
             height:95vh;
             padding:5px;
             border-radius:25px;
-            background-color:red;
+            background-color:darkgrey;
         }
 
         .chat {
-            height : 90%;
-            background-color: cyan;
+            height : 95%;
+            background-color: white;
             border-radius:25px;
+            overflow:hidden;
+            padding-top:15px;
+            padding-left:20px
         }
 
         .prompt-box {
             margin-top:5px;
-            height : 10%;
+            height : 5%;
             background-color: white;
             border-radius:25px;
+            padding-left:20px;
         }
 
         .message {
-            margin-left: 5%;
             margin-bottom:0;
             width: 95%;
-            color: red;
-            font-size: 50px;
+            font-size: 25px;
         }
         
         #prompt {
@@ -44,6 +50,9 @@
             height : 100%;
             border-radius:25px;
             font-size: 25px;
+            outline:none;
+            border-style:none;
+
         }
     </style>
 </head>
@@ -62,7 +71,17 @@
         const socket = io("localhost:3000");
 
         let prompt = document.getElementById("prompt");
+
+        window.onload = ()=>{
+            prompt.focus();
+        }
+
         let chat = document.getElementById("chat");
+
+        function scrollToBottom (id){
+            let div = document.getElementById(id);
+            div.scrollTop = div.scrollHeight - div.clientHeight;
+        }
 
         prompt.addEventListener("keyup",(event)=>{
             if (event.key === "Enter") {
@@ -76,6 +95,7 @@
             messageElement.innerHTML = e;
             messageElement.className="message";
             chat.appendChild(messageElement);
+            scrollToBottom("chat");
         });
     </script>
 </body>
