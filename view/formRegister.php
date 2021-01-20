@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Register form</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=$GLOBALS['config']['bsCss'] ?>">
 </head>
 <body>
     <form method="post" action="register">
@@ -41,6 +41,6 @@
         </div>
         <button class="btn btn-primary" type="submit">Submit</button>
     </form>
-    <script src="view/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=$GLOBALS['config']['bsJs']?>"></script>
 </body>
 </html>

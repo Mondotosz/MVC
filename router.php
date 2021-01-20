@@ -1,4 +1,5 @@
 <?php
+include_once $_SERVER["DOCUMENT_ROOT"]."\\config\\config.php";
 require_once 'controller/ControllerRegister.php';
 
 switch($_SERVER["REQUEST_URI"]){
