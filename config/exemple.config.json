@@ -1,0 +1,13 @@
+{
+  "database": {
+    "hostname": "localhost",
+    "user": "user",
+    "password": "password",
+    "database": "db"
+  },
+  "bootstrap": {
+    "css": "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css",
+    "js": "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+  },
+  "socketio": "https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.min.js"
+}

@@ -6,10 +6,10 @@ class Model
     public function __construct($server = NULL,$user = NULL,$password = NULL,$database = NULL)
     {
 
-        $server != NULL ?: $server = $GLOBALS["config"]["dbHostname"];
-        $user != NULL ?: $user = $GLOBALS["config"]["dbUser"];
-        $password != NULL ?: $password = $GLOBALS["config"]["dbPassword"];
-        $database != NULL ?: $database = $GLOBALS["config"]["dbDatabase"];
+        $server != NULL ?: $server = $GLOBALS["config"]["database"]["hostname"];
+        $user != NULL ?: $user = $GLOBALS["config"]["database"]["user"];
+        $password != NULL ?: $password = $GLOBALS["config"]["database"]["password"];
+        $database != NULL ?: $database = $GLOBALS["config"]["database"]["database"];
 
         // TODO:add db options
         try {

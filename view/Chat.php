@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
-    <link rel="stylesheet" href="<?=$GLOBALS['config']['bsCss'] ?>">
+    <link rel="stylesheet" href="<?=$GLOBALS['config']['bootstrap']['css'] ?>">
     <style>
         body {
             background-color: lightgray;
@@ -65,8 +65,8 @@
             </div>
         </div>
     </div>
-    <script src="<?=$GLOBALS['config']['bsJs']?>"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.min.js"></script>
+    <script src="<?=$GLOBALS['config']['bootstrap']['js']?>"></script>
+    <script src="<?=$GLOBALS['config']['socketio']?>"></script>
     <script>
         const socket = io("localhost:3000");
 
