@@ -1,4 +1,5 @@
 const http = require("http");
+const config = require("./config/config.json");
 
 const requestListener = function (req, res) {
   res.writeHead(200);
@@ -9,7 +10,7 @@ const app = http.createServer(requestListener);
 
 const io = require("socket.io")(app, {
   cors: {
-    origin: "http://localhost:8000",
+    origin: `http://${config.server.address}:${config.server.port}`,
     methods: ["GET", "POST"],
   },
 });
@@ -26,6 +27,6 @@ io.on("connection", (socket) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("listening on *:3000");
+app.listen(config.io.port, () => {
+  console.log(`listening on ${config.io.address}:${config.io.port}`);
 });

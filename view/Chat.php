@@ -66,9 +66,9 @@
         </div>
     </div>
     <script src="<?=$GLOBALS['config']['bootstrap']['js']?>"></script>
-    <script src="<?=$GLOBALS['config']['socketio']?>"></script>
+    <script src="<?=$GLOBALS['config']['io']['js']?>"></script>
     <script>
-        const socket = io("localhost:3000");
+        const socket = io("<?=$GLOBALS['config']['server']['address'].":".$GLOBALS['config']['socketio']['port']?>");
 
         let prompt = document.getElementById("prompt");
 
