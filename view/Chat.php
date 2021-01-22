@@ -68,6 +68,16 @@
     <script src="<?=$GLOBALS['config']['bootstrap']['js']?>"></script>
     <script src="<?=$GLOBALS['config']['io']['js']?>"></script>
     <script>
+        if(typeof window.localStorage.getItem('username') == 'undefined' || window.localStorage.getItem('username') == null){
+            let newName;
+            do {
+                newName=prompt("please enter a name");
+            } while (newName == null);
+
+            window.localStorage.setItem('username',newName);
+        }
+    </script>
+    <script>
         const socket = io("<?=$GLOBALS['config']['server']['address'].":".$GLOBALS['config']['io']['port']?>");
 
         let prompt = document.getElementById("prompt");
@@ -85,14 +95,15 @@
 
         prompt.addEventListener("keyup",(event)=>{
             if (event.key === "Enter") {
-                socket.emit("message",prompt.value);
+                let m = {"username":window.localStorage.getItem('username'),"message":prompt.value};
+                socket.emit("message",m);
                 prompt.value="";
             }
         });
 
         socket.on("message",(e)=>{
             let messageElement = document.createElement("p");
-            messageElement.innerHTML = e;
+            messageElement.innerHTML = e.username+" : "+e.message;
             messageElement.className="message";
             chat.appendChild(messageElement);
             scrollToBottom("chat");
