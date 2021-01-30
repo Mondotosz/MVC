@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . '/controller/Controller.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/class/Controller.php';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/model/ModelRegister.php';
 
 class ControllerRegister extends Controller {

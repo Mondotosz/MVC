@@ -9,10 +9,15 @@ switch($_SERVER["REQUEST_URI"]){
             $view->show();
             break;
         case "/register":
-        require_once 'controller/ControllerRegister.php';
-        $view = new ControllerRegister;
-        $view->control();
-        break;
+            require_once 'controller/ControllerRegister.php';
+            $view = new ControllerRegister;
+            $view->control();
+            break;
+        case "/adventure":
+            require_once 'controller/ControllerAdventure.php';
+            $view = new ControllerAdventure;
+            $view->control();
+            break;
     default:
     require_once 'view/404.php';
 }

@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/model/Model.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/class/Model.php";
 class ModelRegister extends Model
 {
     public function addUser($pseudo,$userName,$inputEmail,$inputPassword,$inputPhoneNumber="",$checkNewsLetter="")
